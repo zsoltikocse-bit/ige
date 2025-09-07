@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Idézet Generátor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: #f5f5f5;
+    }
+
+    #quoteBox {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 340px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    #icon {
+      font-size: 30px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 Random Idézet Generátor</h1>
+
+  <div id="quoteBox">
+    <span id="icon">💡</span>
+    <span id="quote">Kattints a gombra egy idézetért!</span>
+  </div>
+  
+  <button onclick="newQuote()">Új idézet</button>
+
+  <script>
+    const quotes = [
+      { text: "Soha ne add fel!", icon: "💪" },
+      { text: "A siker apró lépésekből áll.", icon: "🚶" },
+      { text: "A tanulásba fektetett idő mindig megtérül.", icon: "📚" },
+      { text: "A hibákból lehet a legtöbbet tanulni.", icon: "⚡" },
+      { text: "Légy kreatív, és próbálkozz!", icon: "🎨" }
+    ];
+
+    function newQuote() {
+      let random = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[random].text;
+      document.getElementById("icon").innerText = quotes[random].icon;
+    }
+  </script>
+</body>
+</html>
